@@ -11,7 +11,7 @@ module.exports = React.createClass({
 	},
 	componentWillMount: function() {
 	      var query = new Parse.Query(ProductModel);
-	      query.equalTo('category', 'Books');
+	      query.descending('createdAt');
 	      query.find().then(
 	      	(products) => {
 	      		console.log(products);
@@ -24,13 +24,13 @@ module.exports = React.createClass({
 	},
 
 	render: function() {
-		var books = this.state.products.map(function(book) {
+		var newProducts = this.state.products.map(function(product) {
 		return (
 				<tr>
-				    <td>{book.get('productName')}</td>
-				    <td>{book.get('productDesc')}</td>
-				    <td>{book.get('price')}</td>
-				    <td>{book.get('category')}</td>
+				    <td>{product.get('productName')}</td>
+				    <td>{product.get('productDesc')}</td>
+				    <td>{product.get('price')}</td>
+				    <td>{product.get('category')}</td>
 				</tr>
 
 		);
@@ -39,7 +39,7 @@ module.exports = React.createClass({
 		return (
 			<div className="container">
 				<div className="row">
-					<h1>Books</h1>
+					<h1>Clothing</h1>
 				</div>
 				<table>
 				  <tr>
@@ -48,7 +48,7 @@ module.exports = React.createClass({
 				    <th>Price</th>
 				    <th>Category</th>
 				  </tr>
-				    {books}
+				    {newProducts}
 				</table>
 			</div>
 			);

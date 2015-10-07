@@ -15,7 +15,9 @@ module.exports = React.createClass({
 			<li key="home" className={currentPage === '' ? 'active' : ''}><a href="#">Home</a></li>,
 			<li key="books" className={currentPage === 'category/books' ? 'active' : ''}><a href="#category/books">Books</a></li>,
 			<li key="electronics" className={currentPage === 'category/electronics' ? 'active' : ''}><a href="#category/electronics">Electronics</a></li>,
-			<li key="clothing" className={currentPage === 'category/clothing' ? 'active' : ''}><a href="#category/clothing">Clothing</a></li>
+			<li key="clothing" className={currentPage === 'category/clothing' ? 'active' : ''}><a href="#category/clothing">Clothing</a></li>,
+			<li key="newProducts" className={currentPage === 'newProducts' ? 'active' : ''}><a href="#newProducts">New Stuff</a></li>,
+			<li key="cheapProducts" className={currentPage === 'cheapProducts' ? 'active' : ''}><a href="#cheapProducts">Cheap Stuff</a></li>
 		];
 
 		if(Parse.User.current()) {
